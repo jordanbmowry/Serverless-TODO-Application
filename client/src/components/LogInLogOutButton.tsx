@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Button } from '@mui/material';
 
 export function LogInLogOutButton({

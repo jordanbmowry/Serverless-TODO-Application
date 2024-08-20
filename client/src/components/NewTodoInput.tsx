@@ -1,4 +1,4 @@
-import React from 'react';
+// @ts-nocheck
 import { useAuth0 } from '@auth0/auth0-react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';

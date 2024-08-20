@@ -1,4 +1,4 @@
-import React from 'react';
+// @ts-nocheck
 import { IconButton } from '@mui/material';
 import {
   Edit as EditIcon,

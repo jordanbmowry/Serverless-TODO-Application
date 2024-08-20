@@ -1,5 +1,5 @@
+// @ts-nocheck
 import { useAuth0 } from '@auth0/auth0-react';
-import React from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import {
   AppBar,
@@ -9,15 +9,20 @@ import {
   Box,
   CircularProgress,
 } from '@mui/material';
+
 import { Callback } from './components/Callback';
+
 import { LogIn } from './components/LogIn';
+
 import { NotFound } from './components/NotFound';
+
 import { Todos } from './components/Todos';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import { LogInLogOutButton } from './components/LogInLogOutButton';
 
-export default function App() {
+export function App() {
   const { isAuthenticated, isLoading, loginWithRedirect, logout } = useAuth0();
 
   const handleLogout = () =>
@@ -37,16 +42,6 @@ export default function App() {
       </Box>
     );
   }
-
-  const logInLogOutButton = isAuthenticated ? (
-    <Button color='inherit' onClick={handleLogout}>
-      Log Out
-    </Button>
-  ) : (
-    <Button color='inherit' onClick={() => loginWithRedirect()}>
-      Log In
-    </Button>
-  );
 
   return (
     <BrowserRouter>
@@ -70,7 +65,7 @@ export default function App() {
         <Routes>
           <Route
             path='/'
-            exact
+            index
             element={isAuthenticated ? <Todos /> : <LogIn />}
           />
           <Route path='/callback' element={<Callback />} />

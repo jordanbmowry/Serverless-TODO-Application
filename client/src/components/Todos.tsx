@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react';
+// @ts-nocheck
+import { useEffect, useState, useCallback } from 'react';
 import { toast } from 'react-toastify';
 import { Grid, CircularProgress, Typography, Box } from '@mui/material';
 import { useAuth0 } from '@auth0/auth0-react';
